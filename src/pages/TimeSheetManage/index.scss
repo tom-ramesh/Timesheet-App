@@ -1,0 +1,21 @@
+@import "../Dashboard/UsersManage/index.scss";
+.timeSheetManage {
+  padding: 0 2rem;
+
+  &__header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    & > label:last-of-type {
+      cursor: pointer;
+      color: #ff0000;
+      text-decoration: underline;
+      transition: 0.2s ease-in;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+}

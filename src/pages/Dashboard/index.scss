@@ -1,0 +1,27 @@
+.dashboard {
+  height: 100vh;
+  padding: 0 2rem;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 0;
+
+    & > label:first-of-type {
+      font-size: 2rem;
+      font-weight: 700;
+    }
+
+    & > label:last-of-type {
+      cursor: pointer;
+      color: #ff0000;
+      text-decoration: underline;
+      transition: 0.2s ease-in;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+}

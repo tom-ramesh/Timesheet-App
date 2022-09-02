@@ -1,0 +1,71 @@
+@import "../../Login/index.scss";
+.usersManage {
+  &__top-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1rem;
+    margin: 2rem 0;
+
+    & > label {
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+
+    & > button {
+      cursor: pointer;
+      padding: 0.5rem 1rem;
+      color: #fff;
+      background-color: $primaryColor;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+  }
+
+  &__table {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: max-content;
+  }
+
+  &__header-container,
+  &__data-container {
+    display: grid;
+    grid-template-columns: repeat(4, 300px);
+    border-radius: 5px;
+    font-weight: 500;
+    place-items: center;
+    padding: 1rem;
+  }
+
+  &__header-container {
+    font-size: 1.1rem;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+      rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  }
+
+  &__data-container {
+    color: #555;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+      rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+
+    & > button {
+      cursor: pointer;
+      width: 75px;
+      padding: 0.5rem;
+      border: none;
+      border-radius: 5px;
+      background-color: #f66;
+      border: 1px solid #fff;
+      color: #fff;
+
+      &:hover {
+        background-color: #fff;
+        color: #f66;
+        border: 1px solid #f66;
+      }
+    }
+  }
+}
