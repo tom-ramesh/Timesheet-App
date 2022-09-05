@@ -30,7 +30,7 @@ const AddTimeSheet = ({ isOpen, togglOpen, userId }) => {
   return (
     <Modal isOpen={isOpen} toggleOpen={togglOpen} label="Add Task">
       <form className="addUser__input-form" onSubmit={handleSubmit}>
-        <div>
+        <div className="addUser__input-container">
           <label>Task</label>
           <input
             value={task}
@@ -39,7 +39,7 @@ const AddTimeSheet = ({ isOpen, togglOpen, userId }) => {
             required
           />
         </div>
-        <div>
+        <div className="addUser__input-container">
           <label>Estimated Time</label>
           <input
             value={estimatedTime}

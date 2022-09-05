@@ -11,6 +11,7 @@ const AddUser = ({ isOpen, toggleOpen }) => {
     role: "",
     age: 0,
     password: "",
+    type: "client",
   });
   const [confirmPassword, setConfirmPassword] = useState("");
 
@@ -26,6 +27,7 @@ const AddUser = ({ isOpen, toggleOpen }) => {
       role: "",
       age: 0,
       password: "",
+      type: "client",
     });
     setConfirmPassword("");
   };
@@ -36,7 +38,7 @@ const AddUser = ({ isOpen, toggleOpen }) => {
     const newUserId = Math.max(...users.map((user) => user.id)) + 1;
 
     if (userData.password === confirmPassword) {
-      dispatch(addUser({ ...userData, type: "client", id: newUserId }));
+      dispatch(addUser({ ...userData, id: newUserId }));
       clearData();
       toggleOpen(false);
     }
@@ -45,7 +47,7 @@ const AddUser = ({ isOpen, toggleOpen }) => {
   return (
     <Modal isOpen={isOpen} toggleOpen={toggleOpen} label="Create User">
       <form onSubmit={handleSubmit} className="addUser__input-form">
-        <div>
+        <div className="addUser__input-container">
           <label>Name</label>
           <input
             value={userData.name}
@@ -53,7 +55,7 @@ const AddUser = ({ isOpen, toggleOpen }) => {
             required
           />
         </div>
-        <div>
+        <div className="addUser__input-container">
           <label>Role</label>
           <input
             value={userData.role}
@@ -61,7 +63,7 @@ const AddUser = ({ isOpen, toggleOpen }) => {
             required
           />
         </div>
-        <div>
+        <div className="addUser__input-container">
           <label>Age</label>
           <input
             value={userData.age}
@@ -70,7 +72,17 @@ const AddUser = ({ isOpen, toggleOpen }) => {
             required
           />
         </div>
-        <div>
+        <div className="addUser__radio-container">
+          <div onClick={() => setUserData({ ...userData, type: "admin" })}>
+            <label>Admin</label>
+            <input type="radio" checked={userData.type === "admin"} readOnly />
+          </div>
+          <div onClick={() => setUserData({ ...userData, type: "client" })}>
+            <label>Client</label>
+            <input type="radio" checked={userData.type === "client"} readOnly />
+          </div>
+        </div>
+        <div className="addUser__input-container">
           <label>Password</label>
           <input
             value={userData.password}
@@ -79,7 +91,7 @@ const AddUser = ({ isOpen, toggleOpen }) => {
             required
           />
         </div>
-        <div>
+        <div className="addUser__input-container">
           <label>Confirm Password</label>
           <input
             value={confirmPassword}
